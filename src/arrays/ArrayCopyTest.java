@@ -33,12 +33,18 @@ public class ArrayCopyTest {
 
         Integer[] sourceArray = new Integer[SIZE_OF_ARRAY];
         Integer[] destinationArray = new Integer[SIZE_OF_ARRAY];
-        fillArray(sourceArray);
 
+        System.out.print("Заполнение исходного массива: ");
+        startBenchmark();
+        fillArray(sourceArray);
+        stopBenchmark();
+
+        System.out.print("Наивное копирование массива: ");
         startBenchmark();
         naiveCopy(sourceArray, destinationArray);
         stopBenchmark();
 
+        System.out.print("НаТивное копирование массива: ");
         startBenchmark();
         System.arraycopy(sourceArray, 0, destinationArray, 0, sourceArray.length);
         stopBenchmark();
