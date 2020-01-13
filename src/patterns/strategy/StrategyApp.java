@@ -20,7 +20,7 @@ public class StrategyApp {
      * @param range диапазон случайных чисел.
      * @return случайно заполненный массив.
      */
-    public int[] fillRandom(int size, int range) {
+    private static int[] fillRandom(int size, int range) {
         Random random = new Random();
         int[] array = new int[size];
         for (int i = 0; i < array.length; i++) {
@@ -31,35 +31,34 @@ public class StrategyApp {
 
     public static void main(String[] args) {
         StrategyClient strategyClient = new StrategyClient(); //context.
-        StrategyApp strategyApp = new StrategyApp();
 
         strategyClient.setStrategy(new BubbleSort()); // change context strategy.
-        strategyClient.executeStrategy(strategyApp.fillRandom(10, 10));
+        strategyClient.executeStrategy(fillRandom(10, 10));
 
         strategyClient.setStrategy(new InsertSort());
-        strategyClient.executeStrategy(strategyApp.fillRandom(10, 100));
+        strategyClient.executeStrategy(fillRandom(20, 100));
 
         strategyClient.setStrategy(new SelectionSorting());
-        strategyClient.executeStrategy(strategyApp.fillRandom(10, 1000));
-    }
-}
-
-// Strategy
-class StrategyClient {
-    Sorting strategy;// sort object reference
-
-    // change strategy
-    public void setStrategy(Sorting strategy) {
-        this.strategy = strategy;
-    }
-
-    // start strategy
-    public void executeStrategy(int[] array) {
-        strategy.sort(array);
+        strategyClient.executeStrategy(fillRandom(30, 1000));
     }
 }
 
 // Context
+class StrategyClient {
+    private Sorting strategy;// sort object reference
+
+    // change strategy
+    void setStrategy(Sorting strategy) {
+        this.strategy = strategy;
+    }
+
+    // start strategy
+    void executeStrategy(int[] array) {
+        strategy.sort(array);
+    }
+}
+
+// Strategy
 interface Sorting {
     void sort(int[] array);
 }
