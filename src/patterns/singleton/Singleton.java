@@ -9,7 +9,7 @@ class Singleton {
     /**
      * Хранится ссылка на единственный экземпляр данного класса.
      */
-    private static Singleton instance = new Singleton();
+    private static volatile Singleton instance;
     static int counter = 0;
 
     /**
@@ -26,6 +26,14 @@ class Singleton {
      * @return ссылка на единственный инстанс данного класса.
      */
     static Singleton getInstance() {
-        return instance;
+        if (instance == null) {
+            //синхронизация по единственному для данного класса статическому объекту.
+            synchronized (Singleton.class) {
+                if (instance == null) {
+                    instance = new Singleton();
+                }
+            }
         }
+        return instance;
+    }
 }
