@@ -9,7 +9,7 @@ class Singleton {
     /**
      * Хранится ссылка на единственный экземпляр данного класса.
      */
-    private static Singleton instance;
+    private static Singleton instance = new Singleton();
     static int counter = 0;
 
     /**
@@ -26,9 +26,6 @@ class Singleton {
      * @return ссылка на единственный инстанс данного класса.
      */
     static Singleton getInstance() {
-        if (instance == null) {
-            instance = new Singleton();
-        }
         return instance;
-    }
+        }
 }

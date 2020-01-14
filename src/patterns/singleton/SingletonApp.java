@@ -10,11 +10,7 @@ package patterns.singleton;
 public class SingletonApp {
 
     public static void main(String[] args) {
-        Singleton[] array = new Singleton[100];
-        for (int i = 0; i < 100; i++) {
-            array[i] = Singleton.getInstance();
-        }
-        System.out.println(Singleton.counter);
+
     }
 }
 
