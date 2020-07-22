@@ -1,4 +1,4 @@
-package patterns.decorator;
+package ru.integral.patterns.decorator;
 
 /**
  * В этом примере, реализован паттерн проектирования Декоратор.

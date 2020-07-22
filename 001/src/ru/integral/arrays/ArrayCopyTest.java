@@ -1,4 +1,4 @@
-package arrays;
+package ru.integral.arrays;
 
 /**
  * Хорошо известно, что нативная функция Java System.arraycopy () является полезным способом копирования одного

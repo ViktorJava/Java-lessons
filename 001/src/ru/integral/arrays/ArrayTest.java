@@ -1,4 +1,4 @@
-package arrays;
+package ru.integral.arrays;
 
 /**
  * простые операции с массивом

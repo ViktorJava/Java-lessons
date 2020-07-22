@@ -1,4 +1,4 @@
-package arrays;
+package ru.integral.arrays;
 
 import java.util.Arrays;
 import java.util.Random;

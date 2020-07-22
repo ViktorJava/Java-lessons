@@ -1,4 +1,4 @@
-package horstmann.loop;
+package ru.integral.horstmann.loop;
 
 import java.util.*;
 
